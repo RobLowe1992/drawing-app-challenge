@@ -3,6 +3,8 @@ import ToolSelector from "./ToolSelector";
 import BrushSize from "./BrushSize";
 import BrushColor from "./BrushColor";
 import Save from "./Save";
+import Upload from "./Upload";
+import Clear from "./Clear";
 
 export default class Sidebar extends Component {
 	render() {
@@ -39,6 +41,20 @@ export default class Sidebar extends Component {
 					<h3 className="section__heading">Save</h3>
 					<Save
 						action={ actions.saveImage }
+					/>
+				</section>
+				<hr className="slate-border"/>
+				<section className="section section--upload-image pad-1em">
+					<h3 className="section__heading">Upload</h3>
+					<Upload
+						action={ actions.uploadImage }
+					/>
+				</section>
+				<hr className="slate-border"/>
+				<section className="section section--clear-canvas pad-1em">
+					<h3 className="section__heading">Clear</h3>
+					<Clear
+						action={ actions.clearCanvas }
 					/>
 				</section>
 			</div>

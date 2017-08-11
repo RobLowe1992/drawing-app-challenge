@@ -1,12 +1,12 @@
 import React, { PropTypes } from "react";
 
-export default function Save(props) {
+export default function Upload(props) {
     const { action } = props;
     return (
         <input
             type="button"
             className="btn"
-            defaultValue="Save"
+            defaultValue="Upload"
             onClick={ () => {
                 action();
             }}
@@ -14,6 +14,6 @@ export default function Save(props) {
     );
 }
 
-Save.propTypes = {
+Upload.propTypes = {
     action: PropTypes.func.isRequired
 };

@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import tools from "./tools";
 import strokes from "./strokes";
-import currentStroke from "./currentStroke";
+import clear from "./clear";
 
 const rootReducer = combineReducers({
 	tools,
 	strokes,
-	currentStroke
+	clear
 });
 
 export default rootReducer;

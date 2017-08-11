@@ -5,18 +5,18 @@ import * as TodoActions from "../actions";
 import Canvas from "../components/Canvas";
 import Sidebar from "../components/Sidebar";
 
-const App = ({tools, actions, strokes, currentStroke}) => (
+const App = ({tools, actions, strokes, clear}) => (
 	<div>
 		<Canvas
 			tools={tools}
 			strokes={strokes}
-			currentStroke={currentStroke}
+			clear={clear}
 		/>
 		<Sidebar
 			tools={tools}
 			actions={actions}
 			strokes={strokes}
-			currentStroke={currentStroke}
+			clear={clear}
 		/>
 	</div>
 )
@@ -28,7 +28,7 @@ App.propTypes = {
 const mapStateToProps = state => ({
 	tools: state.tools,
 	strokes: state.strokes,
-	currentStroke: state.currentStroke
+	clear: state.clear
 })
 
 const mapDispatchToProps = dispatch => ({

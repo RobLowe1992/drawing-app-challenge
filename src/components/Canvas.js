@@ -95,6 +95,7 @@ export default class Canvas extends Component {
 			this.isDrawing = false;
 		}
 		event.preventDefault();
+		console.log(ctx);
 	}
 
 	render() {

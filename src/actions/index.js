@@ -4,3 +4,5 @@ export const selectTool = text => ({ type: types.SELECT_TOOL, text });
 export const changeSize = text => ({ type: types.CHANGE_SIZE, text });
 export const changeColor = text => ({ type: types.CHANGE_COLOR, text });
 export const saveImage  = () => ({ type: types.SAVE_IMAGE });
+export const uploadImage  = () => ({ type: types.UPLOAD_IMAGE });
+export const clearCanvas  = () => ({ type: types.CLEAR_CANVAS });
