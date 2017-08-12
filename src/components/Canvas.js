@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from "react";
-import { BRUSH, ERASER } from "../constants/Tools";
+import { BRUSH, ERASER, STAMP } from "../constants/Tools";
 
 let ctx;
 
@@ -63,6 +63,10 @@ export default class Canvas extends Component {
 				case BRUSH:
                     ctx.strokeStyle = this.getColor();
                     break;
+                case STAMP:
+                	console.log(document.getElementById('upload'))
+                	ctx.strokeStyle = document.getElementById('upload');
+                	break;
 				default:
 					return null;
             }

@@ -8,7 +8,7 @@ import Clear from "./Clear";
 
 export default class Sidebar extends Component {
 	render() {
-		const { tools, actions } = this.props;
+		const { tools, actions, upload } = this.props;
 		const { brush_size } = tools;
 		const { brush_color } = tools;
 		return (
@@ -48,6 +48,7 @@ export default class Sidebar extends Component {
 					<h3 className="section__heading">Upload</h3>
 					<Upload
 						action={ actions.uploadImage }
+						upload={upload}
 					/>
 				</section>
 				<hr className="slate-border"/>
