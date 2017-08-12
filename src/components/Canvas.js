@@ -10,8 +10,6 @@ export default class Canvas extends Component {
 		this.start = this.start.bind(this);
 		this.end = this.end.bind(this);
 		this.draw = this.draw.bind(this);
-		this.strokes = props.strokes;
-		this.currentStroke = props.currentStroke;
 	}
 
 	componentDidMount() {
@@ -45,23 +43,9 @@ export default class Canvas extends Component {
 		}
 	}
 
-	mouseEvents(event){
-		this.currentStroke.points.push({
-			x: event.pageX,
-			y: event.pageY
-		})
-	}
-
 	start(event) {
 		if (this.props.tools.tool === BRUSH || this.props.tools.tool === ERASER) {
 			this.isDrawing = true;
-			this.currentStroke = {
-				color: this.getColor(),
-				size: this.getStroke(),
-				points : []
-			}
-			this.strokes.push(this.currentStroke);
-			this.mouseEvents(event);
 			ctx.beginPath();
 			ctx.moveTo(this.getX(event), this.getY(event));
 			event.preventDefault();
@@ -95,13 +79,13 @@ export default class Canvas extends Component {
 			this.isDrawing = false;
 		}
 		event.preventDefault();
-		console.log(ctx);
 	}
 
 	render() {
 		return (
 			<canvas
 				className="canvas"
+				id="canvas"
 				ref="canvas"
 				onMouseDown={ this.start }
 				onMouseUp={ this.end }
